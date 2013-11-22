@@ -1,14 +1,13 @@
 <?php
 function format_bytes($size){
 			
-	$sizes = array('B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+	$sizes = array('&nbsp&nbspB', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
 	$count = 0;
 	while( $count < (count( $sizes )-1) and $size > 1024){
 		$size = $size/1024;
 		$count ++;
 	}
-	$result = sprintf("%'#7.2f %s", $size, $sizes[$count]);
-	$result = str_replace('#','',$result);
+	$result = sprintf("%.2f %s", $size, $sizes[$count]);
 	return $result;
 }
 
