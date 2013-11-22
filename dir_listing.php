@@ -117,7 +117,7 @@ include 'dir_listing_func.php';
 		<tr>
 			<td><span class="glyphicon '.choose_icon($val).'"></span></td>
 			<td><a href="'.$val.'">'.$val.'</td>
-			<td class="text-right">'. format_bytes(filesize($full_path.$val)) .'</td>
+			<td class="text-right">'. format_bytes(get_file_size($full_path.$val)) .'</td>
 			</tr>';
 		}
 		echo '
@@ -127,7 +127,7 @@ include 'dir_listing_func.php';
 	
 ?>
 		<div class="container">
-			<p class="text-right text-muted"><small>Ael's php directory listing</small></p>
+			<p class="text-right"><a href="https://github.com/ael-code/dir-listing-bootstrap" class="text-muted"><small>Ael's php directory listing</small></a></p>
 		</div>
 
 	 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

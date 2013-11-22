@@ -1,8 +1,6 @@
 <?php
 function format_bytes($size){
-	if($size < 0)
-		return "&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp>2 GB";
-	
+			
 	$sizes = array('B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
 	$count = 0;
 	while( $count < (count( $sizes )-1) and $size > 1024){
@@ -46,6 +44,14 @@ function choose_icon($name){
 		}
 	}
 	return $icons['generic'];
+}
+
+function get_file_size($file){
+	if( ($size = filesize($file)) < 0 ){
+		exec("du -B 1 '$file'",$exec);
+		return $exec[0];
+	}else
+		return $size;
 }
 
 ?>
