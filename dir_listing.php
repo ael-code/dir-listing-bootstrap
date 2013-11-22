@@ -24,6 +24,8 @@
 	
 	<?php
 include 'dir_listing_func.php';
+include 'dir_listing_config.php';
+
 
 //PATH
 
@@ -42,7 +44,6 @@ include 'dir_listing_func.php';
 	$folders=explode('/',$path);
 	$fathers=count($folders)-2;
 
-	//echo '	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">'."\n";
 	echo "	<div class='container navbar-fixed-top'>\n";
 	echo "		<ol class='breadcrumb'>\n";
 
@@ -59,7 +60,6 @@ include 'dir_listing_func.php';
 	echo "			<li class='active'>".$folders[$fathers]."</li>\n";
 	echo "		</ol>\n";
 	echo "	</div>\n";
-	//echo "	</nav>\n";
 
 
 //END_BREADCRUMB
@@ -78,7 +78,8 @@ include 'dir_listing_func.php';
 	$filelist = array();
 		
 	while( false !== ($entry = readdir($dir_handle))){
-		if ($entry == "." | $entry == ".."){
+		
+		if ( ( strpos($entry,'.') === 0 and $show_hidden_file===true) | $entry == "." | $entry == ".." ){
 		}else if ( is_dir( $full_path.$entry ) ) {
 			$folderlist[] = $entry;	
 		}else{
