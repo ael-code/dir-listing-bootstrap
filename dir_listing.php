@@ -21,8 +21,8 @@
 	<!--page content-->
 	<body>
 	
-	
 	<?php
+	
 include 'dir_listing_func.php';
 
 //PATH
