@@ -26,7 +26,8 @@ I started this project to improve the module dir-listing of lighttpd. The origin
 - du (command line utility to view files size)
 
 #### installation
-Create a folder "dirl" in your web-root and put all files in there
+Create a folder "dirl" in your web-root and put all files in there.
+
 Edit your web server rules to redirect directory listing request to "dir_listing.php
 
 #### Configuration
