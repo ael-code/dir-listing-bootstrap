@@ -26,8 +26,8 @@ The configuration file is:
 - Option to hide/show "last modified" coloumn
 - Option to hide/show hidden file
 - Fixed navigable path
-- Empty folder banner
-- Error opennig folder banner ( no permissions to read)
+- Banner for "Empty folder"
+- Banner for "Error opennig folder" ( no permissions to read)
 
 #### Screens
 
