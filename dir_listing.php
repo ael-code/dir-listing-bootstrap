@@ -10,7 +10,9 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		   <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
-		<title>Dir listing</title><!-- @@@@@@@@dinamic-->
+		<!-- Icon -->
+		<link rel="icon" href="/dirl/favicon32.ico">
+		<title><?php echo $_SERVER['REQUEST_URI'] ?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<style type="text/css">
       	body {
@@ -147,7 +149,7 @@ include 'dir_listing_config.php';
 			<p class="text-right"><a href="https://github.com/ael-code/dir-listing-bootstrap" class="text-muted"><small>Ael's php directory listing</small></a></p>
 		</div>
 
-	 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins)--> 
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="/dirl/bootstrap/js/bootstrap.min.js"></script>
