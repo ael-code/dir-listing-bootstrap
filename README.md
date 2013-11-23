@@ -25,6 +25,8 @@ The configuration file is:
 - Automatic file type recognition (different icons)
 - Fixed navigable path
 - Option to hide/show hidden file
+- Empty folder banner
+- Error opennig folder banner ( no permissions to read)
 
 #### Screens
 
