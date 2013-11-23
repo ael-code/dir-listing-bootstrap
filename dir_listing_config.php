@@ -4,6 +4,5 @@
 	
 	//show last modified time (default: false)
 	$show_modified_time = false;
-
 ?>
 
