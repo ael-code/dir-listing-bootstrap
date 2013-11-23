@@ -21,7 +21,6 @@
 	<!--page content-->
 	<body>
 	
-	
 	<?php
 include 'dir_listing_func.php';
 include 'dir_listing_config.php';
@@ -44,8 +43,8 @@ include 'dir_listing_config.php';
 	$folders=explode('/',$path);
 	$fathers=count($folders)-2;
 
-	echo "	<div class='container navbar-fixed-top'>\n";
-	echo "		<ol class='breadcrumb'>\n";
+	echo "		<div class='container navbar-fixed-top'>\n";
+	echo "			<ol class='breadcrumb'>\n";
 
 	//fathers path
 	for($i=0;$i<$fathers;++$i){
@@ -58,8 +57,8 @@ include 'dir_listing_config.php';
 
 	//this folder
 	echo "			<li class='active'>".$folders[$fathers]."</li>\n";
-	echo "		</ol>\n";
-	echo "	</div>\n";
+	echo "			</ol>\n";
+	echo "		</div>\n";
 
 
 //END_BREADCRUMB
@@ -94,36 +93,53 @@ include 'dir_listing_config.php';
 	}
 	
 	//print files table	
+		//print header
 		echo'
-	
 		<div class="container">
 			<table class="table table-condensed table-hover">
 			<thead>
-				<th></th>
+				<th width="35"></th>
 				<th class="text-primary">Name</th>
-	  			<th class="text-primary text-center">Dim</th>
+	  			<th width="89" class="text-primary text-center">Dim</th>';
+	  	if($show_modified_time === true)
+	  		echo'
+	  			<th class="text-primary text-center">Last modified</th>';
+	  	echo'
 	  		</thead>';
-	 
+	 	
+	 	//print folder
 		foreach ($folderlist as $val) {
 			echo '
-				<tr>
+			<tr>
 				<td><span class="glyphicon glyphicon-folder-open"></span></td>
 				<td><a href="'.$val.'">'.$val.'</td>
-				<td class="text-center"> &nbsp&nbsp- </td>
+				<td class="text-center">-</td>';
+			
+			if($show_modified_time === true)
+				echo'
+				<td></td>';
+			echo'
 			</tr>';
 		}
 	
+		//print file
 		foreach ($filelist as $val) {
 		echo '
-		<tr>
-			<td><span class="glyphicon '.choose_icon($val).'"></span></td>
-			<td><a href="'.$val.'">'.$val.'</td>
-			<td class="text-right">'. format_bytes(get_file_size($full_path.$val)) .'</td>
+			<tr>
+				<td><span class="glyphicon '.choose_icon($val).'"></span></td>
+				<td><a href="'.$val.'">'.$val.'</td>
+				<td class="text-right">'. format_bytes(get_file_size($full_path.$val)) .'</td>';
+		
+		if($show_modified_time === true)
+	  		echo'
+	  			<td class="text-center"><small>'.date("d/m/y H:i:s",filectime($full_path.$val)).'</small></td>';
+		echo '
 			</tr>';
+		
 		}
 		echo '
 			</table>
-		</div>';
+		</div>'."\n";
 	//end files table print
 	
 ?>

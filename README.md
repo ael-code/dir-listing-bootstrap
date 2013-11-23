@@ -23,11 +23,12 @@ The configuration file is:
 
 - Responsive layout
 - Automatic file type recognition (different icons)
-- Fixed navigable path
+- Option to hide/show "last modified" coloumn
 - Option to hide/show hidden file
+- Fixed navigable path
 - Empty folder banner
 - Error opennig folder banner ( no permissions to read)
 
 #### Screens
 
-![img](http://img27.imageshack.us/img27/5135/isy1.png)
+![img](http://img834.imageshack.us/img834/6636/gcyx.png)
