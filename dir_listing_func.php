@@ -1,4 +1,5 @@
 <?php
+
 function format_bytes($size){
 			
 	$sizes = array('&nbsp&nbspB', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
@@ -46,11 +47,19 @@ function choose_icon($name){
 }
 
 function get_file_size($file){
-	if( ($size = filesize($file)) < 0 ){
-		exec("du -B 1 '$file'",$exec);
+	include 'dir_listing_config.php';
+	
+	if( $use_du_command === true){
+		return get_file_size_du($file);
+	}else{
+		//undefined result for file > 2GB on 32bit 
+		return fileSize($file);
+	}
+}
+
+function get_file_size_du($file){
+	exec("du -B 1 \"$file\"",$exec);
 		return $exec[0];
-	}else
-		return $size;
 }
 
 ?>
