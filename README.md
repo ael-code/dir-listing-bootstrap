@@ -34,7 +34,7 @@ Edit your web server rules to redirect directory listing request to "dir_listing
 The configuration file is:
 <pre>/dir-listing-bootstrap/dir_listing_conf.php</pre>
 
-If you are on a 32bit machine like RaspberryPi you have to put
+If you are on a 32bit machine like RaspberryPi you have to change this line in the config file
 <pre>$use_du_command = true</pre>
 
 #### Screens
