@@ -54,11 +54,11 @@ include 'dir_listing_config.php';
 		for($j=0;$j<($fathers-$i);++$j){
 		echo '../';
 		}
-	echo "'>".$folders[$i]."</a></li>\n";
+	echo "'>".htmlentities($folders[$i])."</a></li>\n";
 	}
 
 	//this folder
-	echo "			<li class='active'>".$folders[$fathers]."</li>\n";
+	echo "			<li class='active'>".htmlentities($folders[$fathers])."</li>\n";
 	echo "			</ol>\n";
 	echo "		</div>\n";
 
@@ -114,7 +114,7 @@ include 'dir_listing_config.php';
 			echo '
 			<tr>
 				<td><span class="glyphicon glyphicon-folder-open"></span></td>
-				<td><a href="'.$val.'">'.$val.'</td>
+				<td><a href="'.rawurlencode($val).'">'.htmlentities($val).'</td>
 				<td class="text-center">-</td>';
 			
 			if($show_modified_time === true)
@@ -129,7 +129,7 @@ include 'dir_listing_config.php';
 		echo '
 			<tr>
 				<td><span class="glyphicon '.choose_icon($val).'"></span></td>
-				<td><a href="'.$val.'">'.$val.'</td>
+				<td><a href="'.rawurlencode($val).'">'.htmlentities($val).'</td>
 				<td class="text-right">'. format_bytes(get_file_size($full_path.$val)) .'</td>';
 		
 		if($show_modified_time === true)
