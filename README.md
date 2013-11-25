@@ -1,7 +1,8 @@
 dir-listing-bootstrap
 =====================
 
-A simple php directory listing for lighttpd designed with Bootstrap
+A simple php directory listing for [Lighttpd](http://en.wikipedia.org/wiki/Lighttpd) designed with [Bootstrap](http://getbootstrap.com/)
+
 
 
 #### Story
