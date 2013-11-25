@@ -23,9 +23,8 @@ I started this project to improve the module dir-listing of lighttpd. The origin
 
 - Web Server (tested with lighttpd)
 - php5
-- du (command line utility to view files size)
 
-#### installation
+#### Installation
 
 Create a folder "dirl" in your web-root and put all files in there.
 Edit your web server rules to redirect directory listing request to "dir_listing.php
@@ -33,7 +32,10 @@ Edit your web server rules to redirect directory listing request to "dir_listing
 #### Configuration
 
 The configuration file is:
-/dir-listing-bootstrap/dir_listing_conf.php
+<pre>/dir-listing-bootstrap/dir_listing_conf.php</pre>
+
+If you are on a 32bit machine like RaspberryPi you have to change this line in the config file
+<pre>$use_du_command = true</pre>
 
 #### Screens
 
