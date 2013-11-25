@@ -24,7 +24,7 @@
 	<body>
 	
 	<?php
-include 'dir_listing_func.php';
+require 'dir_listing_func.php';
 include 'dir_listing_config.php';
 
 
