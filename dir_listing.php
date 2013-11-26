@@ -80,6 +80,7 @@ include 'dir_listing_config.php';
 		
 	while( false !== ($entry = readdir($dir_handle))){
 		
+		//skip hidden files(optional), current folder ".", parent folder ".."
 		if ( ( strpos($entry,'.') === 0 and $show_hidden_files===false) | $entry == "." | $entry == ".." ){
 			continue;
 		}else if ( is_dir( $full_path.$entry ) ) {
@@ -88,6 +89,10 @@ include 'dir_listing_config.php';
 			$filelist[] = $entry;
 		}
 	}
+	
+	//order folder and files
+	sort($folderlist);
+	sort($filelist);
 	
 	//foldere is empty
 	if(count ($folderlist) == 0 and count ($filelist) == 0){
