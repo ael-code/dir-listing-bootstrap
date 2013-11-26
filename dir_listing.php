@@ -80,7 +80,8 @@ include 'dir_listing_config.php';
 		
 	while( false !== ($entry = readdir($dir_handle))){
 		
-		if ( ( strpos($entry,'.') === 0 and $show_hidden_file===false) | $entry == "." | $entry == ".." ){
+		if ( ( strpos($entry,'.') === 0 and $show_hidden_files===false) | $entry == "." | $entry == ".." ){
+			continue;
 		}else if ( is_dir( $full_path.$entry ) ) {
 			$folderlist[] = $entry;	
 		}else{
