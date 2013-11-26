@@ -22,10 +22,11 @@ function choose_icon($name){
 	"audio" => array("aif","iff","m3u","m4a","mid","mp3","mpa","ra","wav","wma"),
 	"video" => array("avi","mkv","3gp","asf","asx","3g2","flv","m4v","mov","mp4","mpg","rm","srt","swf","vob","wmv"),
 	"image" => array("gif","jpg","jpeg","png","psd","pspimage","tga","thm","tif","tiff","yuv","svg","bmp","dds"),
-	"text" => array("doc","docx","log","msg","odt","pages","rtf","tex","txt","wpd","wps","pdf","xls"),
+	"text" => array("doc","docx","log","msg","odt","pages","rtf","tex","txt","wpd","wps","pdf"),
 	"zip" => array("7z","deb","gz","pkg","rar","rpm",".tar.gz","zip","zipx","jar"),
 	"disk" => array("bin","cue","dmg","iso","mdf","toast","vcd"),
-	"code" => array("java","c","class","pl","py","sh","cpp","cs","dtd","fla","h","lua","m","sln")
+	"code" => array("java","c","class","pl","py","sh","cpp","cs","dtd","fla","h","lua","m","sln"),
+	"excel" => array("xlr","xls","xlsx")
 	);
 	$icons = array(
 	"audio" => "glyphicon-music",
@@ -35,6 +36,7 @@ function choose_icon($name){
 	"zip" => "glyphicon-compressed",
 	"disk" => "glyphicon-record",
 	"code" => "glyphicon-indent-left",
+	"excel" => "glyphicon-list-alt",
 	"generic" => "glyphicon-unchecked"
 	);
 
