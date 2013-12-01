@@ -120,8 +120,15 @@ include 'dir_listing_config.php';
 			echo '
 			<tr>
 				<td><span class="glyphicon glyphicon-folder-open"></span></td>
-				<td><a href="'.rawurlencode($val).'">'.htmlentities($val).'</td>
+				<td><a href="'.rawurlencode($val).'">'.htmlentities($val).'</td>';
+			
+			if($use_du_command === true)
+				echo'
+				<td class="text-right">'. format_bytes(get_file_size($full_path.$val)) .'</td>';
+			else
+				echo'
 				<td class="text-center">-</td>';
+			
 			
 			if($show_modified_time === true)
 				echo'

@@ -7,7 +7,7 @@
 	
 	// use unix du command to calculate file size (default: false)
 	// useful on 32bit machine because php function filesize() has undefined results on this architecture
-	// on raspberryPy set to true
+	// on raspberryPi set to true
 	$use_du_command = false;
 ?>
 
