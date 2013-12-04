@@ -122,7 +122,7 @@ include 'dir_listing_config.php';
 				<td><span class="glyphicon glyphicon-folder-open"></span></td>
 				<td><a href="'.rawurlencode($val).'">'.htmlentities($val).'</td>';
 			
-			if($use_du_command === true)
+			if($use_du_command === true && $show_folder_size === true)
 				echo'
 				<td class="text-right">'. format_bytes(get_file_size($full_path.$val)) .'</td>';
 			else
