@@ -60,7 +60,7 @@ function get_file_size($file){
 }
 
 function get_file_size_du($file){
-	exec("du -B 1 \"$file\"",$exec);
+	exec("du -LsB 1 \"$file\"",$exec);
 		return $exec[0];
 }
 
