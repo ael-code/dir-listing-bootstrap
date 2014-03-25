@@ -31,11 +31,12 @@ include 'dir_listing_config.php';
 //PATH
 
 	$path = $_SERVER['REQUEST_URI'];
+	$doc_root = $_SERVER['DOCUMENT_ROOT']
+	//remove last '/' from doc_root if exist
+	if($doc_root[strlen($doc_root)-1]=='/')
+		$doc_root = substr($doc_root,0,strlen($doc_root)-1);
 	//Substitute %xx characters
 	$path = rawurldecode($path);
-	//remove last '/' from path if exist
-	if($path[strlen($path)-1]=='/')
-		$path = substr($path,0,strlen($path)-1);
 	//Create full path
 	$full_path = $_SERVER['DOCUMENT_ROOT'].$path;
 
