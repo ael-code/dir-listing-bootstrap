@@ -33,8 +33,9 @@ include 'dir_listing_config.php';
 	$path = $_SERVER['REQUEST_URI'];
 	//Substitute %xx characters
 	$path = rawurldecode($path);
-	//Remove first '/'
-	$path = ltrim($path , '/');
+	//remove last '/' from path if exist
+	if($path[strlen($path)-1]=='/')
+		$path = substr($path,0,strlen($path)-1);
 	//Create full path
 	$full_path = $_SERVER['DOCUMENT_ROOT'].$path;
 
