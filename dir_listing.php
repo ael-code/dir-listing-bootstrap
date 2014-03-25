@@ -31,7 +31,7 @@ include 'dir_listing_config.php';
 //PATH
 
 	$path = $_SERVER['REQUEST_URI'];
-	$doc_root = $_SERVER['DOCUMENT_ROOT']
+	$doc_root = $_SERVER['DOCUMENT_ROOT'];
 	//remove last '/' from doc_root if exist
 	if($doc_root[strlen($doc_root)-1]=='/')
 		$doc_root = substr($doc_root,0,strlen($doc_root)-1);
