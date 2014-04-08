@@ -1,13 +1,12 @@
 dir-listing-bootstrap
 =====================
 
-A simple php directory listing for [Lighttpd](http://en.wikipedia.org/wiki/Lighttpd) designed with [Bootstrap](http://getbootstrap.com/)
-
-
+A simple php directory listing designed with [Bootstrap](http://getbootstrap.com/)
 
 #### Story
 
-I started this project to improve the module dir-listing of lighttpd. The original module is very fast (C written) but is not responsive, it does not display well on tablet/smartphone.
+I started this project to improve the module dir-listing of lighttpd. The original lighttpd module is very fast (C written) but is not responsive, it does not display well on tablet/smartphone.
+
 
 #### Futures
 
@@ -22,13 +21,13 @@ I started this project to improve the module dir-listing of lighttpd. The origin
 
 #### Requirement
 
-- Web Server (tested with lighttpd)
+- Web Server (tested with lighttpd and nginx)
 - php5
 
 #### Installation
 
 Create a folder "dirl" in your web-root and put all files in there.
-Edit your web server rules to redirect directory listing request to "dir_listing.php
+Edit your web server rules to redirect directory listing request to "dirl/dir_listing.php
 
 #### Configuration
 
