@@ -24,9 +24,11 @@
 	<body>
 	
 	<?php
-require 'dir_listing_func.php';
-include 'dir_listing_config.php';
 
+require 'dir_listing_func.php';
+require 'configProvider.php';
+
+$cfg= new ConfigProvider();
 
 //PATH
 
@@ -83,7 +85,7 @@ include 'dir_listing_config.php';
 	while( false !== ($entry = readdir($dir_handle))){
 		
 		//skip hidden files(optional), current folder ".", parent folder ".."
-		if ( ( strpos($entry,'.') === 0 and $show_hidden_files===false) | $entry == "." | $entry == ".." ){
+		if ( ( strpos($entry,'.') === 0 and $cfg->getCfg("show_hidden_files")===false) | $entry == "." | $entry == ".." ){
 			continue;
 		}else if ( is_dir( $full_path.$entry ) ) {
 			$folderlist[] = $entry;	
@@ -111,7 +113,7 @@ include 'dir_listing_config.php';
 				<th width="35"></th>
 				<th class="text-primary">Name</th>
 	  			<th width="89" class="text-primary text-center">Dim</th>';
-	  	if($show_modified_time === true)
+	  	if($cfg->getCfg("show_modified_time") === true)
 	  		echo'
 	  			<th class="text-primary text-center">Last modified</th>';
 	  	echo'
@@ -124,7 +126,7 @@ include 'dir_listing_config.php';
 				<td><span class="glyphicon glyphicon-folder-open"></span></td>
 				<td><a href="'.rawurlencode($val).'">'.htmlentities($val).'</td>';
 			
-			if($use_du_command === true && $show_folders_size === true)
+			if($cfg->getCfg("use_du_command") === true && $cfg->getCfg("show_folders_size") === true)
 				echo'
 				<td class="text-right">'. format_bytes(get_file_size($full_path.$val)) .'</td>';
 			else
@@ -132,7 +134,7 @@ include 'dir_listing_config.php';
 				<td class="text-center">-</td>';
 			
 			
-			if($show_modified_time === true)
+			if( $cfg->getCfg("show_modified_time") === true)
 				echo'
 				<td></td>';
 			echo'
@@ -147,7 +149,7 @@ include 'dir_listing_config.php';
 				<td><a href="'.rawurlencode($val).'">'.htmlentities($val).'</td>
 				<td class="text-right">'. format_bytes(get_file_size($full_path.$val)) .'</td>';
 		
-		if($show_modified_time === true)
+		if($cfg->getCfg("show_modified_time") === true)
 	  		echo'
 	  			<td class="text-center"><small>'.date("d/m/y H:i:s",filectime($full_path.$val)).'</small></td>';
 		echo '
