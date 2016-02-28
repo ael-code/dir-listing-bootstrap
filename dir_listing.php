@@ -74,7 +74,7 @@ include 'dir_listing_config.php';
 	//error opening folder
 	if($dir_handle == false){
 		echo "<br><br><div class='container'><div class='alert alert-danger text-center'><strong>Error!</strong> failed to open folder </div></div>\n";
-		break;
+		exit('failed to open folder');
 	}
 	
 	$folderlist = array();
@@ -99,7 +99,7 @@ include 'dir_listing_config.php';
 	//foldere is empty
 	if(count ($folderlist) == 0 and count ($filelist) == 0){
 		echo '<br><br><div class="container"><div class="alert alert-info text-center"><strong>This folder is empty</strong></div></div>';
-		break;
+		exit();
 	}
 	
 	//print files table	
